@@ -24,7 +24,7 @@ export default function ReactionButtons({post}) {
     }
     )
   return (
-    <div>
+    <div className='reaction-btn-wrap'>
       {reactionButton}
     </div>
   )

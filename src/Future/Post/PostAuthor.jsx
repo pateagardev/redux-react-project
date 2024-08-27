@@ -23,7 +23,7 @@ export default function PostAuthor({ userId }) {
     );
 
     return (
-        <span>
+        <span className='author-name'>
             by {authors ? authors.name : "Unknown Author"}
         </span>
     );
