@@ -133,7 +133,7 @@ export const updatePosts = createAsyncThunk("post/updatePosts", async (initialPo
   const {id} = initialPost
   try {
     const responce = await axios.put(`${POST_URL}/${id}`, initialPost)
-    return initialPost
+    return responce.data
 
   } catch (error) {
     return initialPost

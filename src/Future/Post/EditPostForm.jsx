@@ -59,8 +59,18 @@ const onSave = [postTitle, postContent, userId].every(Boolean) && requestStatus=
   }
 
   const deletePost = () => {
-    console.log("ids",post.id)
-    dispatch(removePost({id:post.id}))
+    try {
+      setRequestStatus("pending")
+    dispatch(removePost({ id: post.id })).unwrap()
+    setPostTitle(""),
+      setPostContent(""),
+      setUserId(""),
+      navigate("/")
+    } catch (error) {
+      console.error("failed", error)
+    } finally {
+      setRequestStatus("idle")
+    }
   }
       
   const usersOptions = users.map((user) => 
