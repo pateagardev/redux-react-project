@@ -3,6 +3,10 @@ import axios from "axios";
 
 const USER_URL = "https://jsonplaceholder.typicode.com/users"
 
+// type UserState = {
+  
+// }
+
 const initialState = {
   users: [],  // Initialize as an empty array
   status: 'idle', // idle || loading || succeeded || failed
@@ -41,5 +45,6 @@ export const userSlice = createSlice({
 export const getUsersAll = state => state.users.users;
 export const getUsersStatus = state => state.users.status;
 export const getUsersError = state => state.users.error;
-
+export const selectUserbyId = (state, userId) =>
+  state.users.users.find(user => user.id === userId)
 export default userSlice.reducer;

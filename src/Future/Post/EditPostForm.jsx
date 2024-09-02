@@ -40,7 +40,7 @@ const onSave = [postTitle, postContent, userId].every(Boolean) && requestStatus=
     
       try {
         setRequestStatus("pending")
-        dispatch(updatePosts({ title: postTitle, body: postContent, id: userId, reactions: post.reactions })).unwrap(
+        dispatch(updatePosts({id:postid,  title: postTitle, body: postContent, userId, reactions: post.reactions })).unwrap(
           setPostTitle(""),
           setPostContent(""),
           setUserId(""),
